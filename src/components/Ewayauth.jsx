@@ -14,7 +14,7 @@ function Ewayauth() {
   const navigate = useNavigate();
 
   const tempgo = () => {
-     navigate("/green-form");
+     navigate("/temp2");
   }
 
   return (

@@ -1,5 +1,5 @@
 // In your Main.jsx file
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -53,6 +53,31 @@ function Main() {
   const [user,setUser]=useState({});
   const [userCollection,setUserCollection]=useState([])
   const isHomePage = window.location.pathname === '/';
+  const [eWay,setEway]=useState([]);
+
+  useEffect(()=>{
+     const fetchFun=async()=>{
+       try {
+        const response = await fetch('https://www.ulipstaging.dpiit.gov.in/ulip/v1.0.0/user/login', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            "username": " transvue_usr",
+            "password": "transvue@27022024"
+          })
+        });
+        const responseData = await response.json();
+        setEway(responseData);
+       } catch (error) {
+         console.log(error);
+       }
+     }
+     fetchFun();
+  },[]);
+
   return (
     <div className='flex flex-col relative'>
      
@@ -62,9 +87,9 @@ function Main() {
         {/* } */}
         <Navbar userBtn={userBtn} setUserBtn={setUserBtn} loginData={loginData} setLoginData={setLoginData} user={user}userCollection={userCollection}/>
         <Routes>
-        <Route path="/" element={<HomeNew />} />
+        <Route path="/" element={<LoadingPage />} />
         <Route path="/Product" element={<Product />} />
-        <Route path="/LoadingPage" element={<LoadingPage />} />
+    
           <Route path="/Auth" element={<HomePage loginData={loginData} setLoginData={setLoginData} user={user} setUser={setUser} userCollection={userCollection} setUserCollection={setUserCollection} />} />
           <Route path="/green-form" element={<GreenForm formData={formData} greenFormInfo={greenFormInfo} setGreenFormInfo={setGreenFormInfo} />} />
           <Route path="/GreenFormSubmit" element={<GreenFormSubmit  formData={formData}  greenFormInfo={greenFormInfo} />} />

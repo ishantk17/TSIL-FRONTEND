@@ -811,7 +811,7 @@ function Temp2({ formData, setFormData }) {
                   />
                   <button
                     type="button"
-                    className={`border-2 rounded-full px-10 py-1 inline-block font-semibold ml-2 ${
+                    className={`border-2 rounded-full px-5 py-1 inline-block font-semibold ml-2 ${
                       formData.VehicleNum
                         ? "border-green-500 bg-green-500 text-white hover:bg-white hover:text-green-500"
                         : "border-green-300 bg-green-300 text-white cursor-not-allowed"
@@ -840,6 +840,24 @@ function Temp2({ formData, setFormData }) {
                     type="date"
                     className="TransporterDate border-gray-300 border-2 rounded-lg outline-none px-2 py-0.5 opacity-50 bg-gray-400 text-gray-300 cursor-not-allowed"
                     name="TransporterDate"
+                    disabled
+                  />
+                  
+                </td>
+              </tr>
+              <tr className="flex gap-x-16     ">
+                <td className="ml-5">
+                  <label
+                    htmlFor="TransporterDoc"
+                    className="font-bold mr-4"
+                    required
+                  >
+                    TSL/GMN No.
+                  </label>
+                  <input
+                    type="number"
+                    className="TransporterDoc opacity-50 border-gray-300 border-2 rounded-lg outline-none px-2 py-0.5 mr-4 bg-gray-400 cursor-not-allowed"
+                    name="TransporterDoc"
                     disabled
                   />
                 </td>

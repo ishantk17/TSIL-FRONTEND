@@ -47,7 +47,7 @@ function Navbar({userBtn,setUserBtn,loginData, setLoginData,user, userCollection
               className="text-base font-bold text-gray-700 hover:border-b-2 hover:border-green-500"
               onMouseEnter={()=>setUserBtn(false)}
             >
-              Library
+              DigiVault
             </Link>
           </li>
           <li>

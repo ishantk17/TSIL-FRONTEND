@@ -253,7 +253,7 @@ function DocUpload() {
       
            <div className="flex justify-center m-1 pt-2 bg-white">
  
-
+<Link to={'/temp23'}>
  <button
    type="button"
    className="border-2 border-green-500 bg-green-500 text-white rounded-full px-12 py-2 inline-block font-semibold  ml-2 " 
@@ -261,6 +261,7 @@ onClick={ProduceEwayBill}
 >
   Submit
  </button>
+ </Link>
 </div>
         </div>
         </div>

@@ -55,13 +55,8 @@ function GreenForm({formData,greenFormInfo,setGreenFormInfo}) {
             <h2 className="text-3xl font-bold text-green-500 ">Green Form</h2>
           </div>
           <div className="flex" >
-          {/* <h3>Vehicle Number:- {formData.VehicleNum}</h3> */}
-          <input
-              type="text"
-              className=" p-2 bg-gray-200 outline-none text-sm flex-1"
-              placeholder=" Enter Vehicle No."
-            />
-                    </div>
+          <h3>Vehicle Number:- {formData.VehicleNum}</h3>
+         </div>
         </div>        
 
         <div className="flex flex-row justify-around w-full px-4 py-2">

@@ -654,6 +654,24 @@ function Temp23({formData,greenFormInfo}) {
               />
               </td>
             </tr>
+            <tr className="flex gap-x-16     ">
+                <td className="ml-5">
+                  <label
+                    htmlFor="TransporterDoc"
+                    className="font-bold mr-4"
+                    required
+                  >
+                    TSL/GMN No.
+                  </label>
+                  <input
+                    type="number"
+                    className="TransporterDate border-gray-300 border-2 rounded-lg outline-none px-2 py-0.5 opacity-50 bg-green-300 text-black cursor-not-allowed"
+                    name="TransporterDoc"
+                    value="123345"
+                    disabled
+                  />
+                </td>
+              </tr>
           </table>
         </div>
         <div className="flex justify-center m-1 pt-2 bg-white">
